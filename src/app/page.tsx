@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import WindowOpenButton from './components/WindowOpenButton';
 
 export default function Home() {
   return (
@@ -12,8 +12,11 @@ export default function Home() {
           코칭 시스템을 볼 수 있어요.
         </h3>
         <h4>
-          <button className="text-blue-600">Youtube</button>의 본인 채널이
-          만들어져 있어야 로그인이 가능해요!
+          <WindowOpenButton
+            buttonName="Youtube"
+            url="https://www.youtube.com/"
+          />
+          의 본인 채널이 만들어져 있어야 로그인이 가능해요!
         </h4>
         <div>
           <button>Google로 로그인</button>
