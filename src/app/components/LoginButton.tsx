@@ -5,10 +5,16 @@ import { signInWithGoogle } from '../lib/supabase/auth';
 export default function LoginButton() {
   const handleLogin = async () => {
     try {
+      console.log(
+        'GOOGLE_CLIENT_ID:',
+        process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID
+      );
+
       await signInWithGoogle();
 
-      const client_id = process.env.GOOGLE_CLIENT_ID;
-      const redirect_uri = 'http://localhost:3000/callback';
+      const client_id = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
+      const redirect_uri =
+        'https://vuwhjbfdoavrlicxcsem.supabase.co/auth/v1/callback';
       const scope = [
         'https://www.googleapis.com/auth/youtube.readonly',
         'https://www.googleapis.com/auth/yt-analytics.readonly',
